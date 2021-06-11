@@ -23,7 +23,7 @@ import os
 from os.path import basename
 import os.path
 from html_telegraph_poster import TelegraphPoster
-from typing import Optional, List
+from typing import Optional, List, Tuple, Union
 from userbot import bot, LOGS
 
 from telethon.tl.functions.channels import GetParticipantRequest
@@ -38,7 +38,7 @@ async def md5(fname: str) -> str:
     return hash_md5.hexdigest()
 
 
-def humanbytes(size: int) -> str:
+def humanbytes(size: Union[int, float]) -> str:
     if size is None or isinstance(size, str):
         return ""
 
@@ -151,7 +151,7 @@ async def check_media(reply_message):
         return data
 
 
-async def run_cmd(cmd: List) -> (bytes, bytes):
+async def run_cmd(cmd: List) -> Tuple[bytes, bytes]:
     process = await asyncio.create_subprocess_exec(
         *cmd,
         stdout=asyncio.subprocess.PIPE,
