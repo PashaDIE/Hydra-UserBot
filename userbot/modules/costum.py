@@ -83,8 +83,7 @@ async def on_snip_save(event):
         else:
             await event.edit(success.format("Berhasil", keyword))
     except UnmappedInstanceError:
-        return await event.edit(
-            f"**ERROR: Costum** `{keyword}` **Sudah ada.**")
+        return await event.edit(f"**ERROR: Costum** `{keyword}` **Sudah ada.**")
 
 
 @register(outgoing=True, pattern=r"^\.costums$")
