@@ -35,7 +35,7 @@ async def memify(event):
     input_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, os.path.basename(input_file))
 
     if input_file.endswith(".tgs"):
-        await event.edit("**Mengekstrak frame pertama...**")
+        await event.edit("**Mengekstrak Frame pertama...**")
         converted_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, "meme.webp")
         cmd = f"lottie_convert.py --frame 0 {input_file} {converted_file}"
         await runcmd(cmd)
@@ -45,15 +45,15 @@ async def memify(event):
         input_file = converted_file
 
     elif input_file.endswith(".mp4"):
-        await event.edit("**Mengekstrak frame pertama...**")
+        await event.edit("**Mengekstrak Frame pertama...**")
         converted_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, "meme.png")
         await take_screen_shot(input_file, 0, converted_file)
         os.remove(input_file)
         if not os.path.lexists(converted_file):
-            return await event.edit("**Tidak dapat mengurai video ini.**")
+            return await event.edit("**Tidak Dapat Mengurai Video ini.**")
         input_file = converted_file
 
-    await event.edit("**Menambahkan teks...**")
+    await event.edit("**Menambahkan Teks...**")
     try:
         final_image = await add_text_img(input_file, input_str)
     except Exception as e:
@@ -68,7 +68,7 @@ async def memify(event):
 
 async def add_text_img(image_path, text):
     font_size = 12
-    stroke_width = 2
+    stroke_width = 1
 
     if ";" in text:
         upper_text, lower_text = text.split(";")
