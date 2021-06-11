@@ -56,26 +56,30 @@ def time_formatter(seconds: int) -> str:
     hours, minutes = divmod(minutes, 60)
     days, hours = divmod(hours, 24)
     tmp = (
-        ((str(days) + " day(s), ") if days else "") +
-        ((str(hours) + " hour(s), ") if hours else "") +
-        ((str(minutes) + " minute(s), ") if minutes else "") +
-        ((str(seconds) + " second(s), ") if seconds else "")
+        ((str(days) + " day(s), ") if days else "")
+        + ((str(hours) + " hour(s), ") if hours else "")
+        + ((str(minutes) + " minute(s), ") if minutes else "")
+        + ((str(seconds) + " second(s), ") if seconds else "")
     )
     return tmp[:-2]
 
 
 def human_to_bytes(size: str) -> int:
     units = {
-        "M": 2**20, "MB": 2**20,
-        "G": 2**30, "GB": 2**30,
-        "T": 2**40, "TB": 2**40
+        "M": 2 ** 20,
+        "MB": 2 ** 20,
+        "G": 2 ** 30,
+        "GB": 2 ** 30,
+        "T": 2 ** 40,
+        "TB": 2 ** 40,
     }
 
     size = size.upper()
-    if not re.match(r' ', size):
-        size = re.sub(r'([KMGT])', r' \1', size)
+    if not re.match(r" ", size):
+        size = re.sub(r"([KMGT])", r" \1", size)
     number, unit = [string.strip() for string in size.split()]
     return int(float(number) * units[unit])
+
 
 
 async def is_admin(chat_id, user_id):
@@ -151,7 +155,7 @@ async def check_media(reply_message):
         return data
 
 
-async def run_cmd(cmd: List) -> Tuple[bytes, bytes]:
+async def run_cmd(cmd: list) -> tuple[bytes, bytes]:
     process = await asyncio.create_subprocess_exec(
         *cmd,
         stdout=asyncio.subprocess.PIPE,
