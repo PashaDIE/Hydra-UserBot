@@ -80,7 +80,8 @@ async def add_text_img(image_path, text):
     img_info = img.info
     image_width, image_height = img.size
     font = ImageFont.truetype(
-        font="userbot/utils/styles/FontLord.ttf", size=int(image_height * font_size) // 100
+        font="userbot/utils/styles/FontLord.ttf",
+        size=int(image_height * font_size) // 100,
     )
     draw = ImageDraw.Draw(img)
 
