@@ -29,6 +29,7 @@ from barcode.writer import ImageWriter
 from bs4 import BeautifulSoup
 from emoji import get_emoji_regexp
 from googletrans import LANGUAGES
+from google_trans_new import LANGUAGES, google_translator
 from gtts import gTTS
 from gtts.lang import tts_langs
 from humanize import naturalsize
