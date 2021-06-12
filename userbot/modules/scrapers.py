@@ -291,22 +291,51 @@ async def wiki(wiki_q):
     await wiki_q.edit("**Search:**\n`" + match + "`\n\n**Result:**\n" + result)
 
 
-@register(outgoing=True, pattern=r"^\.ud (.*)")
-async def _(event):
-    if event.fwd_from:
-        return
-    await event.edit("processing...")
-    word = event.pattern_match.group(1)
-    urban = asyncurban.UrbanDictionary()
+@register(outgoing=True, pattern=r"^\.ud(?: |$)(.*)")
+async def urban_dict(event):
+    """Output the definition of a word from Urban Dictionary"""
+
+    if event.is_reply and not event.pattern_match.group(1):
+        query = await event.get_reply_message()
+        query = str(query.message)
+    else:
+        query = str(event.pattern_match.group(1))
+
+    if not query:
+        return await event.edit("**Balas pesan atau berikan kueri untuk menelusuri!**")
+
+    await event.edit("**Processing...**")
+    ud = asyncurban.UrbanDictionary()
+    template = "**Keyword:** `{}`\n\n**Definisi:**\n{}\n\n**Contoh:**\n__{}__"
+
     try:
-        mean = await urban.get_word(word)
-        await event.edit(
-            "Text: **{}**\n\nBerarti: **{}**\n\nContoh: __{}__".format(
-                mean.word, mean.definition, mean.example
-            )
+        definition = await ud.get_word(query)
+    except asyncurban.UrbanException as e:
+        return await event.edit(f"**Error:** `{e}`")
+
+    result = template.format(definition.word, definition.definition, definition.example)
+
+    if len(result) < 4096:
+        return await event.edit(result)
+
+    await event.edit("**Output terlalu besar, mengirim sebagai file...**")
+    with open("output.txt", "w+") as file:
+        file.write(
+            "Keyword: "
+            + definition.word
+            + "\n\nBerarti: "
+            + definition.definition
+            + "Contoh: \n"
+            + definition.example
         )
-    except asyncurban.WordNotFoundError:
-        await event.edit("Tidak ada hasil untuk **" + word + "**")
+    await event.client.send_file(
+        event.chat_id,
+        "output.txt",
+        caption=f"**Urban Dictionary's Definisi tentang {query}**",
+    )
+    if os.path.exists("output.txt"):
+        os.remove("output.txt")
+    return await event.delete()
 
 
 @register(outgoing=True, pattern=r"^\.tts(?: |$)([\s\S]*)")
