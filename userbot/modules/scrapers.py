@@ -23,13 +23,12 @@ from urllib.parse import quote_plus
 
 import asyncurban
 import barcode
-import emoji
 import qrcode
 import requests
 from barcode.writer import ImageWriter
 from bs4 import BeautifulSoup
 from emoji import get_emoji_regexp
-from googletrans import LANGUAGES, Translator
+from googletrans import LANGUAGES
 from gtts import gTTS
 from gtts.lang import tts_langs
 from humanize import naturalsize
@@ -399,7 +398,7 @@ async def translateme(trans):
 
     try:
         source_lan = translator.detect(deEmojify(message))[1].title()
-    except:
+    except BaseException:
         source_lan = "(Google tidak memberikan info ini)"
 
     reply_text = f"Dari: **{source_lan}**\nKe: **{LANGUAGES.get(target_lang).title()}**\n\n{reply_text}"
@@ -445,10 +444,13 @@ async def lang(value):
         addgvar("tts_lang", arg)
         LANG = tts_langs()[arg]
 
-    await value.edit(f"**Bahasa untuk** `{scraper}` **diganti menjadi** `{LANG.title()}`")
+    await value.edit(
+        f"**Bahasa untuk** `{scraper}` **diganti menjadi** `{LANG.title()}`"
+    )
     if BOTLOG:
         await value.client.send_message(
-            BOTLOG_CHATID, f"**Bahasa untuk** `{scraper}` **diganti menjadi** `{LANG.title()}`"
+            BOTLOG_CHATID,
+            f"**Bahasa untuk** `{scraper}` **diganti menjadi** `{LANG.title()}`",
         )
 
 
