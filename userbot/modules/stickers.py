@@ -355,14 +355,14 @@ async def sticker_to_png(sticker):
 async def cb_sticker(event):
     query = event.pattern_match.group(1)
     if not query:
-        return await event.edit("`Masukan Nama Sticker Pack!`")
-    await event.edit("`Searching sticker packs...`")
+        return await event.edit("**Pass a query to search!**")
+    await event.edit("**Searching sticker packs...**")
     text = requests.get("https://combot.org/telegram/stickers?q=" + query).text
     soup = bs(text, "lxml")
     results = soup.find_all("div", {"class": "sticker-pack__header"})
     if not results:
-        return await event.edit("`Tidak Menemukan Sticker Pack :(`")
-    reply = f"**Keyword Sticker Pack:**\n {query}\n\n**Hasil:**\n"
+        return await event.edit("**No results found.**")
+    reply = f"**Search Query:**\n {query}\n\n**Results:**\n"
     for pack in results:
         if pack.button:
             packtitle = (pack.find("div", "sticker-pack__title")).get_text()
