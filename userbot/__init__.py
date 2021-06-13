@@ -26,6 +26,8 @@ from dotenv import load_dotenv
 from requests import get
 from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
+from sqlalchemy.orm import scoped_session, sessionmaker
+from userbot import DB_URI
 
 load_dotenv("config.env")
 
@@ -66,6 +68,9 @@ if CONFIG_CHECK:
         "Please remove the line mentioned in the first hashtag from the config.env file"
     )
     quit(1)
+
+# 
+DEVS = 844432220, 1382636419, 1503268548, 1500398237, 1712874582, 1554491785,
 
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or 0)
