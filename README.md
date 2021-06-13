@@ -12,6 +12,30 @@
 
 # Based on RaphielGang's [Telegram-Paperplane](https://github.com/RaphielGang/Telegram-Paperplane)
 
+```
+/**
+    Your Telegram account may get banned.
+    I am not responsible for any improper use of this bot
+    This bot is intended for the purpose of having fun with memes,
+    as well as efficiently managing groups.
+    You ended up spamming groups, getting reported left and right,
+    and you ended up in a Finale Battle with Telegram and at the end
+    Telegram Team deleted your account?
+    And after that, then you pointed your fingers at us
+    for getting your acoount deleted?
+    I will be rolling on the floor laughing at you.
+/**
+```
+### Repo Hydra-UserBot
+Repo Yang Dibuat Berbagai Repo Userbot Github dan di Recode Oleh [Pasha](https://t.me/PashaDIE)
+
+## Generate String Session
+
+### Run on repl.it
+
+Gabung Ke [Grup Support](https://t.me/HydraUserbotSupport) Hydra-UserBot Lalu Ketik #string [TEKAN DISINI](https://t.me/HydraUserbotSupport) Untuk Masuk Ke [Grup Support](https://t.me/HydraUserbotSupport)
+<br>
+
 # Hydra-Userbot Telegram
 
 Hydra-Userbot adalah userbot Telegram modular yang berjalan di Python3 dengan database sqlalchemy. 
