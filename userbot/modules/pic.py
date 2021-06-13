@@ -21,7 +21,9 @@ from userbot.events import register
 
 @register(outgoing=True, pattern=r"^\.pic(?: |$)(.*)")
 async def on_file_to_photo(pics):
-    await pics.edit("Mengonversi gambar Dokumen menjadi Gambar Ukuran Penuh\nHarap tunggu...")
+    await pics.edit(
+        "Mengonversi gambar Dokumen menjadi Gambar Ukuran Penuh\nHarap tunggu..."
+    )
     await sleep(1.5)
     await pics.delete()
     target = await pics.get_reply_message()
