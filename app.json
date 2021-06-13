@@ -3,17 +3,7 @@
   "description": "[Hydra-Userbot] userbot Telegram modular yang berjalan pada Python 3.9+",
   "logo": "https://telegra.ph/file/35867da40771d6bdbefb5.jpg",
   "keywords": [
-    "telegram",
-    "userbot",
-    "plugin",
-    "modular",
-    "productivity"
-  ],
-  "repository": "https://github.com/PashaDIE/Hydra-Userbot",
-  "telegram": "https://t.me/PashaDIE",
-  "success_url": "https://t.me/PashaDIE",
-  "stack": "container",
-  "env": {
+    
     "API_KEY": {
       "description": "Dapatkan API KEY di web my.telegram.org. Masukan yg APP ID Telegram",
       "required": true
