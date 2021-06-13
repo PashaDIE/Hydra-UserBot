@@ -49,6 +49,28 @@ mengelola grup secara efisien dan mengotomatiskan beberapa hal yang membosankan.
 Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 ```
 
+## Cara Deploy 👷
+
+```
+* **[HEROKU](https://www.heroku.com/) Method** 🔧
+
+  > Pertama, dapatkan API_KE & API_HASH di my.telegram.org (wajib)
+
+  > Dapatkan Sesi String pada perintah di bawah ini, jalankan di terminal Anda (wajib)
+
+  > Selanjutnya klik Deploy tombol di bawah ini.
+
+  > Isi bidang vars wajib di heroku
+
+  > Akhirnya nyalakan aplikasi dan periksa log (pengaturan -> lihat log) enjoyy :)
+```
+
+## <p align="center">Deploy to Heroku Methods</p>
+
+
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/mrismanaziz/Man-Userbot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+
+<br>
 ## Credits
 Thanks For all :
 *   [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
