@@ -22,7 +22,7 @@ async def help(event):
             await event.edit(str(CMD_HELP[args]))
         else:
             await event.edit("**Masukan Perintah yang Bener Goblokkkk!!**")
-            await asyncio.sleep(200)
+            await asyncio.sleep(15)
             await event.delete()
     else:
         string = ""
