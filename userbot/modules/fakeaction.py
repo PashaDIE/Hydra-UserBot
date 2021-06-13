@@ -29,7 +29,7 @@ async def _(event):
             except BaseException:
                 return await event.edit("`Masukan jumlah detik yang benar`")
     await event.edit(f"**Memulai Pengetikan Palsu Selama** `{t}` **detik.**")
-    await asyncio(2)
+    await asyncio.sleep(2)
     await event.delete()
     async with event.client.action(event.chat_id, "typing"):
         await asyncio.sleep(t)
@@ -49,6 +49,8 @@ async def _(event):
             except BaseException:
                 return await event.edit("`Masukan jumlah detik yang benar`")
     await event.edit(f"**Memulai merekam audio palsu Selama** `{t}` **detik.**")
+    await asyncio.sleep(2)
+    await event.delete()
     async with event.client.action(event.chat_id, "record-audio"):
         await asyncio.sleep(t)
 
