@@ -5,7 +5,7 @@
 #
 # inline credit @NopeGoodloking
 # Recode by @PashaDIE
-# t.me/SharingUserbot
+# t.me/HydraUserbotSupport
 #
 """ Userbot initialization. """
 
