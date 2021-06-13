@@ -152,10 +152,10 @@ ALIVE_TEKS_CUSTOM = os.environ.get(
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
 # Custom Emoji Alive
-ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡️")
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "🐍")
 
 # Custom icon HELP
-ICON_HELP = os.environ.get("ICON_HELP", "❉")
+ICON_HELP = os.environ.get("ICON_HELP", "🐍")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -338,7 +338,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "```🔥 Man-Userbot Berhasil Di Aktifkan 🔥```")
+    await bot.send_message(BOTLOG_CHATID, "```�🐍 Hydra-Userbot Sudah Aktif �🐍```")
     return
 
 with bot:
