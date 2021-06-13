@@ -11,17 +11,12 @@ from datetime import datetime
 from telethon.errors import BadRequestError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import ChatBannedRights
-from telethon.tl.types import Channel
-from telethon.tl.types import MessageEntityMentionName
+from telethon.tl.types import Channel, ChatBannedRights, MessageEntityMentionName
 
 import userbot.modules.sql_helper.gban_sql_helper as gban_sql
-from userbot.modules.sql_helper.mute_sql import is_muted, mute, unmute
-
-from userbot import BOTLOG, BOTLOG_CHATID, DEVS, CMD_HELP
-from userbot.utils import edit_delete, edit_or_reply
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, DEVS
 from userbot.events import register
+from userbot.utils import edit_delete, edit_or_reply
 
 BANNED_RIGHTS = ChatBannedRights(
     until_date=None,
@@ -46,6 +41,7 @@ UNBAN_RIGHTS = ChatBannedRights(
     embed_links=None,
 )
 
+
 async def admin_groups(grp):
     admgroups = []
     async for dialog in grp.client.iter_dialogs():
@@ -58,8 +54,10 @@ async def admin_groups(grp):
             admgroups.append(entity.id)
     return admgroups
 
+
 def mentionuser(name, userid):
     return f"[{name}](tg://user?id={userid})"
+
 
 async def get_user_from_event(event, uevent=None, secondgroup=None):
     if uevent is None:
@@ -98,9 +96,8 @@ async def get_user_from_event(event, uevent=None, secondgroup=None):
             return None, None
     return user_obj, extra
 
-  
-  
-@register(outgoing=True, pattern="^\.gban(?: |$)(.*)")
+
+@register(outgoing=True, pattern="^\\.gban(?: |$)(.*)")
 async def gban(event):
     if event.fwd_from:
         return
@@ -188,7 +185,7 @@ async def gban(event):
             pass
 
 
-@register(outgoing=True, pattern="^\.ungban(?: |$)(.*)")
+@register(outgoing=True, pattern="^\\.ungban(?: |$)(.*)")
 async def ungban(event):
     if event.fwd_from:
         return
@@ -259,7 +256,7 @@ async def ungban(event):
             )
 
 
-@register(outgoing=True, pattern="^\.listgban$")
+@register(outgoing=True, pattern="^\\.listgban$")
 async def gablist(event):
     if event.fwd_from:
         return
@@ -276,7 +273,6 @@ async def gablist(event):
     else:
         GBANNED_LIST = "no Gbanned Users (yet)"
     await edit_or_reply(event, GBANNED_LIST)
-
 
 
 CMD_HELP.update(
