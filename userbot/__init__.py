@@ -3,8 +3,8 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-# inline credit @keselekpermen69
-# Recode by @mrismanaziz
+# inline credit @NopeGoodloking
+# Recode by @PashaDIE
 # t.me/SharingUserbot
 #
 """ Userbot initialization. """
@@ -99,7 +99,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/mrismanaziz/Man-Userbot.git")
+    "https://github.com/PashaDIE/Hydra-Userbot.git")
 UPSTREAM_REPO_BRANCH = os.environ.get(
     "UPSTREAM_REPO_BRANCH", "Man-Userbot")
 
@@ -415,18 +415,18 @@ with bot:
         async def handler(event):
             await event.message.get_sender()
             text = (
-                f"**Hey**, __I am using__ 🔥 **Man-Userbot** 🔥\n\n"
+                f"**Hey**, __I am using__ 🔥 **Hydra-Userbot** 🔥\n\n"
                 f"       __Thanks For Using me__\n\n"
                 f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"
-                f"✣ **Group Support :** [Sharing Userbot](t.me/sharinguserbot)\n"
-                f"✣ **Owner Repo :** [Risman](t.me/mrismanaziz)\n"
-                f"✣ **Repo :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n")
+                f"✣ **Group Support :** [Hydra Userbot](https://t.me/HydraUserbotSupport)\n"
+                f"✣ **Owner Repo :** [Pasha](t.me/PashaDIE)\n"
+                f"✣ **Repo :** [Hydra-Userbot](https://github.com/PashaDIE/Hydra-Userbot)\n")
             await tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
                                           custom.Button.url(
                                               text="⛑ Group Support ⛑",
-                                              url="https://t.me/SharingUserbot"
+                                              url="https://t.me/HydraUserbotSupport"
                                           )
                                       ]
                                   ]
@@ -441,8 +441,8 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Harap Gunakan .help Untuk Perintah",
-                    text="{}\n\n**✥ Jumlah Module Yang Tersedia :** `{}` **Module**\n               \n**✥ Daftar Modul Man-Userbot :** \n".format(
-                        "**✗ Man-Userbot Main Menu ✗**",
+                    text="{}\n\n**✥ Jumlah Module Yang Tersedia :** `{}` **Module**\n               \n**✥ Daftar Modul Hydra-Userbot :** \n".format(
+                        "**✗ Hydra-Userbot Main Menu ✗**",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -451,25 +451,25 @@ with bot:
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Man - Userbot",
-                    url="https://t.me/SharingUserbot",
-                    text="**Man - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Risman](https://t.me/mrismanaziz)\n✣ **Grup Support :** @SharingUserbot\n✣ **Repository :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    description="Repository Hydra - Userbot",
+                    url="https://t.me/HydraUserbotSupport",
+                    text="**Hydra - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Risman](https://t.me/mrismanaziz)\n✣ **Grup Support :** @HydraUserbotSupport\n✣ **Repository :** [Hydra-Userbot](https://github.com/PashaDIE/Hydra-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
                                 "Support",
-                                "https://t.me/SharingUserbot"),
+                                "https://t.me/HydraUserbotSupport"),
                             custom.Button.url(
                                 "Repo",
-                                "https://github.com/mrismanaziz/Man-Userbot")],
+                                "https://github.com/PashaDIE/Hydra-Userbot")],
                     ],
                     link_preview=False)
             else:
                 result = builder.article(
-                    title="✗ Man-Userbot ✗",
-                    description="Man - UserBot | Telethon",
-                    url="https://t.me/SharingUserbot",
-                    text="**Man - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Risman](https://t.me/mrismanaziz)\n✣ **Grup Support :** @SharingUserbot\n✣ **Repository :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    title="✗ Hydra-Userbot ✗",
+                    description="Hydra - UserBot | Telethon",
+                    url="https://t.me/HydraUserbotSupport",
+                    text="**Hydra - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Risman](https://t.me/PashaDIE)\n✣ **Grup Support :** @HydraUserbotSupport\n✣ **Repository :** [Hydra-Userbot](https://github.com/PashaDIE/Hydra-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
@@ -477,7 +477,7 @@ with bot:
                                 "https://t.me/SharingUserbot"),
                             custom.Button.url(
                                 "Repo",
-                                "https://github.com/mrismanaziz/Man-Userbot")],
+                                "https://github.com/PashaDIE/Hydra-Userbot")],
                     ],
                     link_preview=False,
                 )
