@@ -557,9 +557,9 @@ CMD_HELP.update(
     {
         "kickme": "**Plugin : **`kickme`\
         \n\n  •  **Syntax :** `.kickme`\
-        \n  •  **Function : **Keluar grup dengan menampilkan pesan Master has left this group, bye!!\
+        \n  •  **Function : **Keluar grup dengan menampilkan pesan Tuan has left this group, bye!!\
         \n\n  •  **Syntax :** `.leave`\
-        \n  •  **Function : **Keluar grup dengan menampilkan pesan Master Telah Meninggalkan Grup, bye !!\
+        \n  •  **Function : **Keluar grup dengan menampilkan pesan Tuan Telah Meninggalkan Grup, bye !!\
         \n\n  •  **Syntax :** `.kikme`\
         \n  •  **Function : **Keluar grup dengan menampilkan pesan GC NYA JELEK GOBLOK KELUAR DULU AH CROTT 🥴\
     "
