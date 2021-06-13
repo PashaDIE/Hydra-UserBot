@@ -22,4 +22,4 @@ git fetch
 git checkout staging
 git pull origin staging
 git push --force origin staging:Hydra-Userbot
-tg_sendinfo "<code>I have merged all commits from staging into Man-Userbot</code>"
+tg_sendinfo "<code>I have merged all commits from staging into Hydra-Userbot</code>"
